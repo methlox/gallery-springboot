@@ -1,5 +1,6 @@
-package com.sid.gallery;
+package com.sid.gallery.service;
 
+import com.sid.gallery.model.Photos;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

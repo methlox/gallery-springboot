@@ -1,6 +1,7 @@
-package com.sid.gallery;
+package com.sid.gallery.web;
 
-import jakarta.validation.Valid;
+import com.sid.gallery.service.GalleryService;
+import com.sid.gallery.model.Photos;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

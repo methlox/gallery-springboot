@@ -1,4 +1,4 @@
-package com.sid.gallery;
+package com.sid.gallery.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
