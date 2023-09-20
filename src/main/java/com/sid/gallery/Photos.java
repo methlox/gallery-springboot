@@ -1,8 +1,12 @@
 package com.sid.gallery;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class Photos {
 
     private String id;
+
+    @NotEmpty
     private String filename;
 
     public Photos() {
