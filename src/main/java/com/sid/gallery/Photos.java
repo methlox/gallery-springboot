@@ -1,5 +1,6 @@
 package com.sid.gallery;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
 
 public class Photos {
@@ -9,7 +10,18 @@ public class Photos {
     @NotEmpty
     private String filename;
 
+    @JsonIgnore
     private byte[] data;
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    private String contentType;
 
     public byte[] getData() {
         return data;
