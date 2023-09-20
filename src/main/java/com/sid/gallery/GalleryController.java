@@ -4,11 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.http.HttpResponse;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class GalleryController {
@@ -36,5 +32,12 @@ public class GalleryController {
     public void del(@PathVariable String id) {
         Photos photos = db.remove(id);
         if (photos == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/photos")
+    public Photos create(Photos photos){
+        photos.setId(UUID.randomUUID().toString());
+        db.put(photos.getId(), photos);
+        return photos;
     }
 }
