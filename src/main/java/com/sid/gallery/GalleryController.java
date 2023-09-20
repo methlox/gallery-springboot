@@ -35,7 +35,7 @@ public class GalleryController {
     }
 
     @PostMapping("/photos")
-    public Photos create(Photos photos){
+    public Photos create(@RequestBody Photos photos){
         photos.setId(UUID.randomUUID().toString());
         db.put(photos.getId(), photos);
         return photos;
