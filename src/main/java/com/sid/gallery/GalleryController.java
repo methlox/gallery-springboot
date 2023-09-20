@@ -1,10 +1,7 @@
 package com.sid.gallery;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.net.http.HttpResponse;
@@ -33,5 +30,11 @@ public class GalleryController {
         Photos photos = db.get(id);
         if (photos == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         return photos;
+    }
+
+    @DeleteMapping("/photos/{id}")
+    public void del(@PathVariable String id) {
+        Photos photos = db.remove(id);
+        if (photos == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 }
